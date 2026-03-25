@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>資工選課表</title>
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 70%;
+  margin: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* 綠色表頭 */
+.green-header {
+  background-color: #0aa06e;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* popover */
+#popover {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+  background: white;
+  border-left: 2px solid #ccc;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+#popover.show {
+  right: 0;
+}
+</style>
+</head>
+
+<body>
+
+<h1>資工選課表</h1>
+
+<table>
+<tr class="green-header">
+  <th>開課單位</th>
+  <th>課程名稱</th>
+  <th>授課教師</th>
+</tr>
+
+<!-- 1 -->
+<tr>
+<td>資工系</td>
+<td>
+<a href="https://catalog.cgu.edu.tw/coursedata?sectionid=A2337" target="_blank">
+物件導向軟體設計
+</a>
+</td>
+<td>黃崇源</td>
+</tr>
+
+<!-- 2 -->
+<tr>
+<td>資工系</td>
+<td>
+<a href="https://catalog.cgu.edu.tw/coursedata?sectionid=A2338" target="_blank">
+作業系統實務
+</a>
+</td>
+<td>張哲維</td>
+</tr>
+
+<!-- 3 -->
+<tr>
+<td>資工系</td>
+<td>
+<a href="https://catalog.cgu.edu.tw/coursedata?sectionid=A2344" target="_blank">
+海外研習
+</a>
+</td>
+<td>陳光武</td>
+</tr>
+
+<!-- 4 -->
+<tr>
+<td>資工系</td>
+<td>
+<a href="https://catalog.cgu.edu.tw/coursedata?sectionid=A2339" target="_blank">
+通訊系統
+</a>
+</td>
+<td>陳仁暉</td>
+</tr>
+
+<!-- 5 -->
+<tr>
+<td>資工系</td>
+<td>
+<a href="https://catalog.cgu.edu.tw/coursedata?sectionid=A2340" target="_blank">
+軟硬體專題(二)
+</a>
+</td>
+<td>黃崇源</td>
+</tr>
+
+<!-- 6 -->
+<tr>
+<td>資工系</td>
+<td>
+<a href="https://catalog.cgu.edu.tw/coursedata?sectionid=A2341" target="_blank">
+資料庫系統
+</a>
+</td>
+<td>李春明</td>
+</tr>
+
+<!-- 7 -->
+<tr>
+<td>資工系</td>
+<td>
+<a href="https://catalog.cgu.edu.tw/coursedata?sectionid=A2342" target="_blank">
+人工智慧
+</a>
+</td>
+<td>魏志達</td>
+</tr>
+
+</table>
+
+<!-- Popover -->
+<div id="popover">
+<span onclick="closePopover()">✖</span>
+<h2>課程詳細資料</h2>
+<p><b>開課序號：</b><span id="courseId"></span></p>
+<p><b>課程名稱：</b><span id="courseName"></span></p>
+<p><b>授課教師：</b><span id="teacher"></span></p>
+</div>
+
+<script>
+function showDetail(id, name, teacher) {
+  document.getElementById("courseId").innerText = id;
+  document.getElementById("courseName").innerText = name;
+  document.getElementById("teacher").innerText = teacher;
+  document.getElementById("popover").classList.add("show");
+}
+
+function closePopover() {
+  document.getElementById("popover").classList.remove("show");
+}
+</script>
+
+</body>
+</html>
