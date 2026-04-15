@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>景點觀光展覽資訊</title>
+    <!-- 引入 Bootstrap 樣式 -->
+    <link rel="stylesheet" href="https://jsdelivr.net">
+    <style>
+        /* 綠色表頭樣式 (對應圖片) */
+        #csie thead th {
+            background-color: #00a86b !important;
+            color: white;
+            border: none;
+        }
+        .search-box {
+            width: 250px;
+            display: inline-block;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body class="p-4">
+
+    <div class="container-fluid">
+        <h1>
+            景點觀光展覽資訊
+            <input type="text" id="searchInput" class="form-control search-box" placeholder="搜尋名稱..." onchange="handleSearch()">
+        </h1>
+        
+        <table id="csie" class="table table-striped table-hover mt-3">
+            <thead>
+                <tr>
+                    <th style="width: 70%;">名稱</th>
+                    <th>地點</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 資料由 JS 動態產生 -->
+            </tbody>
+        </table>
+
+        <!-- 分頁導覽區 -->
+        <div class="d-flex align-items-center mt-3">
+            <button onclick="prevPage()" class="btn btn-light border">上一頁</button>
+            <span id="pageInfo" class="mx-3">1 / 1 頁</span>
+            <button onclick="nextPage()" class="btn btn-light border">下一頁</button>
+        </div>
+    </div>
+
+    <!-- 引入 JavaScript -->
+    <script src="INDEX11.js"></script>
+</body>
+</html>
